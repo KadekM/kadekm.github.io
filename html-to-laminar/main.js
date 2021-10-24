@@ -7046,7 +7046,7 @@ $c_Lsimer_html_converter_HtmlToTagsConverter$.prototype.toScalaAttributes__Lorg_
     $m_s_package$();
     return $m_sci_Nil$()
   } else {
-    var this$41 = new $c_Lorg_scalajs_dom_ext_NamedNodeMapMap(attributes);
+    var this$42 = new $c_Lorg_scalajs_dom_ext_NamedNodeMapMap(attributes);
     var f$3 = new $c_sjsr_AnonFunction1(((this$6, converterType$1, nestingLevel$1) => ((x0$1$2) => {
       var x0$1 = $as_T2(x0$1$2);
       if ((x0$1 !== null)) {
@@ -7169,95 +7169,100 @@ $c_Lsimer_html_converter_HtmlToTagsConverter$.prototype.toScalaAttributes__Lorg_
           attrs = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$2)
         } else {
           var name = (("" + converterType$1.Lsimer_html_converter_LaminarTagsConverter$__f_attributePrefix) + attrKey);
-          var $$x22 = $m_s_Predef$();
-          var xs = $f_T__split__T__I__AT(name, "-", 0);
-          var f$1 = ((this$2$1) => ((x$5$2) => {
-            var x$5 = $as_T(x$5$2);
-            return $m_sc_StringOps$().capitalize$extension__T__T(x$5)
-          }))(this$6);
-          var len$1 = xs.u.length;
-          var ys$1 = new ($d_T.getArrayOf().constr)(len$1);
-          if ((len$1 > 0)) {
-            var i$1 = 0;
-            if ((xs !== null)) {
-              while ((i$1 < len$1)) {
-                var $$x13 = i$1;
-                var arg1$8 = xs.get(i$1);
-                ys$1.set($$x13, f$1(arg1$8));
-                i$1 = ((1 + i$1) | 0)
+          var upperCased;
+          if (($uI(name.indexOf("-")) !== (-1))) {
+            var $$x22 = $m_s_Predef$();
+            var xs = $f_T__split__T__I__AT(name, "-", 0);
+            var f$1 = ((this$2$1) => ((x$5$2) => {
+              var x$5 = $as_T(x$5$2);
+              return $m_sc_StringOps$().capitalize$extension__T__T(x$5)
+            }))(this$6);
+            var len$1 = xs.u.length;
+            var ys$1 = new ($d_T.getArrayOf().constr)(len$1);
+            if ((len$1 > 0)) {
+              var i$1 = 0;
+              if ((xs !== null)) {
+                while ((i$1 < len$1)) {
+                  var $$x13 = i$1;
+                  var arg1$8 = xs.get(i$1);
+                  ys$1.set($$x13, f$1(arg1$8));
+                  i$1 = ((1 + i$1) | 0)
+                }
+              } else if ((xs instanceof $ac_I)) {
+                var x3$1 = $asArrayOf_I(xs, 1);
+                while ((i$1 < len$1)) {
+                  var $$x14 = i$1;
+                  var arg1$9 = x3$1.get(i$1);
+                  ys$1.set($$x14, f$1(arg1$9));
+                  i$1 = ((1 + i$1) | 0)
+                }
+              } else if ((xs instanceof $ac_D)) {
+                var x4$1 = $asArrayOf_D(xs, 1);
+                while ((i$1 < len$1)) {
+                  var $$x15 = i$1;
+                  var arg1$10 = x4$1.get(i$1);
+                  ys$1.set($$x15, f$1(arg1$10));
+                  i$1 = ((1 + i$1) | 0)
+                }
+              } else if ((xs instanceof $ac_J)) {
+                var x5$1 = $asArrayOf_J(xs, 1);
+                while ((i$1 < len$1)) {
+                  var $$x16 = i$1;
+                  var t$1 = x5$1.get(i$1);
+                  var lo$1 = t$1.RTLong__f_lo;
+                  var hi$1 = t$1.RTLong__f_hi;
+                  ys$1.set($$x16, f$1(new $c_RTLong(lo$1, hi$1)));
+                  i$1 = ((1 + i$1) | 0)
+                }
+              } else if ((xs instanceof $ac_F)) {
+                var x6$1 = $asArrayOf_F(xs, 1);
+                while ((i$1 < len$1)) {
+                  var $$x17 = i$1;
+                  var arg1$11 = x6$1.get(i$1);
+                  ys$1.set($$x17, f$1(arg1$11));
+                  i$1 = ((1 + i$1) | 0)
+                }
+              } else if ((xs instanceof $ac_C)) {
+                var x7$1 = $asArrayOf_C(xs, 1);
+                while ((i$1 < len$1)) {
+                  var $$x18 = i$1;
+                  var arg1$12 = x7$1.get(i$1);
+                  ys$1.set($$x18, f$1($bC(arg1$12)));
+                  i$1 = ((1 + i$1) | 0)
+                }
+              } else if ((xs instanceof $ac_B)) {
+                var x8$1 = $asArrayOf_B(xs, 1);
+                while ((i$1 < len$1)) {
+                  var $$x19 = i$1;
+                  var arg1$13 = x8$1.get(i$1);
+                  ys$1.set($$x19, f$1(arg1$13));
+                  i$1 = ((1 + i$1) | 0)
+                }
+              } else if ((xs instanceof $ac_S)) {
+                var x9$1 = $asArrayOf_S(xs, 1);
+                while ((i$1 < len$1)) {
+                  var $$x20 = i$1;
+                  var arg1$14 = x9$1.get(i$1);
+                  ys$1.set($$x20, f$1(arg1$14));
+                  i$1 = ((1 + i$1) | 0)
+                }
+              } else if ((xs instanceof $ac_Z)) {
+                var x10$1 = $asArrayOf_Z(xs, 1);
+                while ((i$1 < len$1)) {
+                  var $$x21 = i$1;
+                  var arg1$15 = x10$1.get(i$1);
+                  ys$1.set($$x21, f$1(arg1$15));
+                  i$1 = ((1 + i$1) | 0)
+                }
+              } else {
+                throw new $c_s_MatchError(xs)
               }
-            } else if ((xs instanceof $ac_I)) {
-              var x3$1 = $asArrayOf_I(xs, 1);
-              while ((i$1 < len$1)) {
-                var $$x14 = i$1;
-                var arg1$9 = x3$1.get(i$1);
-                ys$1.set($$x14, f$1(arg1$9));
-                i$1 = ((1 + i$1) | 0)
-              }
-            } else if ((xs instanceof $ac_D)) {
-              var x4$1 = $asArrayOf_D(xs, 1);
-              while ((i$1 < len$1)) {
-                var $$x15 = i$1;
-                var arg1$10 = x4$1.get(i$1);
-                ys$1.set($$x15, f$1(arg1$10));
-                i$1 = ((1 + i$1) | 0)
-              }
-            } else if ((xs instanceof $ac_J)) {
-              var x5$1 = $asArrayOf_J(xs, 1);
-              while ((i$1 < len$1)) {
-                var $$x16 = i$1;
-                var t$1 = x5$1.get(i$1);
-                var lo$1 = t$1.RTLong__f_lo;
-                var hi$1 = t$1.RTLong__f_hi;
-                ys$1.set($$x16, f$1(new $c_RTLong(lo$1, hi$1)));
-                i$1 = ((1 + i$1) | 0)
-              }
-            } else if ((xs instanceof $ac_F)) {
-              var x6$1 = $asArrayOf_F(xs, 1);
-              while ((i$1 < len$1)) {
-                var $$x17 = i$1;
-                var arg1$11 = x6$1.get(i$1);
-                ys$1.set($$x17, f$1(arg1$11));
-                i$1 = ((1 + i$1) | 0)
-              }
-            } else if ((xs instanceof $ac_C)) {
-              var x7$1 = $asArrayOf_C(xs, 1);
-              while ((i$1 < len$1)) {
-                var $$x18 = i$1;
-                var arg1$12 = x7$1.get(i$1);
-                ys$1.set($$x18, f$1($bC(arg1$12)));
-                i$1 = ((1 + i$1) | 0)
-              }
-            } else if ((xs instanceof $ac_B)) {
-              var x8$1 = $asArrayOf_B(xs, 1);
-              while ((i$1 < len$1)) {
-                var $$x19 = i$1;
-                var arg1$13 = x8$1.get(i$1);
-                ys$1.set($$x19, f$1(arg1$13));
-                i$1 = ((1 + i$1) | 0)
-              }
-            } else if ((xs instanceof $ac_S)) {
-              var x9$1 = $asArrayOf_S(xs, 1);
-              while ((i$1 < len$1)) {
-                var $$x20 = i$1;
-                var arg1$14 = x9$1.get(i$1);
-                ys$1.set($$x20, f$1(arg1$14));
-                i$1 = ((1 + i$1) | 0)
-              }
-            } else if ((xs instanceof $ac_Z)) {
-              var x10$1 = $asArrayOf_Z(xs, 1);
-              while ((i$1 < len$1)) {
-                var $$x21 = i$1;
-                var arg1$15 = x10$1.get(i$1);
-                ys$1.set($$x21, f$1(arg1$15));
-                i$1 = ((1 + i$1) | 0)
-              }
-            } else {
-              throw new $c_s_MatchError(xs)
-            }
+            };
+            var this$37 = $$x22.wrapRefArray__AO__scm_ArraySeq$ofRef(ys$1);
+            upperCased = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$37, "", "", "")
+          } else {
+            upperCased = name
           };
-          var this$36 = $$x22.wrapRefArray__AO__scm_ArraySeq$ofRef(ys$1);
-          var upperCased = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$36, "", "-", "");
           $m_s_package$();
           var array$3 = [((upperCased + " := ") + escapedValue)];
           var elems$3 = new $c_sjsr_WrappedVarArgs(array$3);
@@ -7287,7 +7292,7 @@ $c_Lsimer_html_converter_HtmlToTagsConverter$.prototype.toScalaAttributes__Lorg_
         throw new $c_s_MatchError(x0$1)
       }
     }))(this, converterType, nestingLevel));
-    return $as_sc_Iterable($f_sc_IterableOps__flatMap__F1__O(this$41, f$3))
+    return $as_sc_Iterable($f_sc_IterableOps__flatMap__F1__O(this$42, f$3))
   }
 });
 $c_Lsimer_html_converter_HtmlToTagsConverter$.prototype.removeTagsFromScalaCode__T__T__sci_Seq__T = (function(htmlCode, scalaCode, tagsToRemove) {
