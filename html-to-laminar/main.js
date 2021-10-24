@@ -7171,95 +7171,58 @@ $c_Lsimer_html_converter_HtmlToTagsConverter$.prototype.toScalaAttributes__Lorg_
           var name = (("" + converterType$1.Lsimer_html_converter_LaminarTagsConverter$__f_attributePrefix) + attrKey);
           var upperCased;
           if (($uI(name.indexOf("-")) !== (-1))) {
-            var $$x22 = $m_s_Predef$();
-            var xs = $f_T__split__T__I__AT(name, "-", 0);
-            var f$1 = ((this$2$1) => ((x$5$2) => {
-              var x$5 = $as_T(x$5$2);
-              return $m_sc_StringOps$().capitalize$extension__T__T(x$5)
-            }))(this$6);
-            var len$1 = xs.u.length;
-            var ys$1 = new ($d_T.getArrayOf().constr)(len$1);
-            if ((len$1 > 0)) {
-              var i$1 = 0;
-              if ((xs !== null)) {
-                while ((i$1 < len$1)) {
-                  var $$x13 = i$1;
-                  var arg1$8 = xs.get(i$1);
-                  ys$1.set($$x13, f$1(arg1$8));
-                  i$1 = ((1 + i$1) | 0)
+            var rc8 = false;
+            var x2 = null;
+            var this$33 = $m_s_Predef$().wrapRefArray__AO__scm_ArraySeq$ofRef($f_T__split__T__I__AT(name, "-", 0));
+            $m_sci_List$();
+            var x1$3 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this$33);
+            matchEnd9: {
+              var x$1 = $m_s_package$().s_package$__f_Nil;
+              if (((x$1 === null) ? (x1$3 === null) : x$1.equals__O__Z(x1$3))) {
+                upperCased = "";
+                break matchEnd9
+              };
+              if ((x1$3 instanceof $c_sci_$colon$colon)) {
+                rc8 = true;
+                x2 = $as_sci_$colon$colon(x1$3);
+                var x$3 = $as_T(x2.sci_$colon$colon__f_head);
+                var p3 = x2.sci_$colon$colon__f_next;
+                var x$4 = $m_s_package$().s_package$__f_Nil;
+                if (((x$4 === null) ? (p3 === null) : x$4.equals__O__Z(p3))) {
+                  upperCased = x$3;
+                  break matchEnd9
                 }
-              } else if ((xs instanceof $ac_I)) {
-                var x3$1 = $asArrayOf_I(xs, 1);
-                while ((i$1 < len$1)) {
-                  var $$x14 = i$1;
-                  var arg1$9 = x3$1.get(i$1);
-                  ys$1.set($$x14, f$1(arg1$9));
-                  i$1 = ((1 + i$1) | 0)
-                }
-              } else if ((xs instanceof $ac_D)) {
-                var x4$1 = $asArrayOf_D(xs, 1);
-                while ((i$1 < len$1)) {
-                  var $$x15 = i$1;
-                  var arg1$10 = x4$1.get(i$1);
-                  ys$1.set($$x15, f$1(arg1$10));
-                  i$1 = ((1 + i$1) | 0)
-                }
-              } else if ((xs instanceof $ac_J)) {
-                var x5$1 = $asArrayOf_J(xs, 1);
-                while ((i$1 < len$1)) {
-                  var $$x16 = i$1;
-                  var t$1 = x5$1.get(i$1);
-                  var lo$1 = t$1.RTLong__f_lo;
-                  var hi$1 = t$1.RTLong__f_hi;
-                  ys$1.set($$x16, f$1(new $c_RTLong(lo$1, hi$1)));
-                  i$1 = ((1 + i$1) | 0)
-                }
-              } else if ((xs instanceof $ac_F)) {
-                var x6$1 = $asArrayOf_F(xs, 1);
-                while ((i$1 < len$1)) {
-                  var $$x17 = i$1;
-                  var arg1$11 = x6$1.get(i$1);
-                  ys$1.set($$x17, f$1(arg1$11));
-                  i$1 = ((1 + i$1) | 0)
-                }
-              } else if ((xs instanceof $ac_C)) {
-                var x7$1 = $asArrayOf_C(xs, 1);
-                while ((i$1 < len$1)) {
-                  var $$x18 = i$1;
-                  var arg1$12 = x7$1.get(i$1);
-                  ys$1.set($$x18, f$1($bC(arg1$12)));
-                  i$1 = ((1 + i$1) | 0)
-                }
-              } else if ((xs instanceof $ac_B)) {
-                var x8$1 = $asArrayOf_B(xs, 1);
-                while ((i$1 < len$1)) {
-                  var $$x19 = i$1;
-                  var arg1$13 = x8$1.get(i$1);
-                  ys$1.set($$x19, f$1(arg1$13));
-                  i$1 = ((1 + i$1) | 0)
-                }
-              } else if ((xs instanceof $ac_S)) {
-                var x9$1 = $asArrayOf_S(xs, 1);
-                while ((i$1 < len$1)) {
-                  var $$x20 = i$1;
-                  var arg1$14 = x9$1.get(i$1);
-                  ys$1.set($$x20, f$1(arg1$14));
-                  i$1 = ((1 + i$1) | 0)
-                }
-              } else if ((xs instanceof $ac_Z)) {
-                var x10$1 = $asArrayOf_Z(xs, 1);
-                while ((i$1 < len$1)) {
-                  var $$x21 = i$1;
-                  var arg1$15 = x10$1.get(i$1);
-                  ys$1.set($$x21, f$1(arg1$15));
-                  i$1 = ((1 + i$1) | 0)
-                }
-              } else {
-                throw new $c_s_MatchError(xs)
-              }
-            };
-            var this$37 = $$x22.wrapRefArray__AO__scm_ArraySeq$ofRef(ys$1);
-            upperCased = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$37, "", "", "")
+              };
+              if (rc8) {
+                var x$6 = $as_T(x2.sci_$colon$colon__f_head);
+                var xs = x2.sci_$colon$colon__f_next;
+                var f$1 = ((this$2$1) => ((x$5$2$2) => {
+                  var x$5$2 = $as_T(x$5$2$2);
+                  return $m_sc_StringOps$().capitalize$extension__T__T(x$5$2)
+                }))(this$6);
+                var this$36;
+                if ((xs === $m_sci_Nil$())) {
+                  this$36 = $m_sci_Nil$()
+                } else {
+                  var arg1$8 = xs.head__O();
+                  var h = new $c_sci_$colon$colon(f$1(arg1$8), $m_sci_Nil$());
+                  var t$1 = h;
+                  var rest = $as_sci_List(xs.tail__O());
+                  while ((rest !== $m_sci_Nil$())) {
+                    var arg1$9 = rest.head__O();
+                    var nx = new $c_sci_$colon$colon(f$1(arg1$9), $m_sci_Nil$());
+                    t$1.sci_$colon$colon__f_next = nx;
+                    t$1 = nx;
+                    rest = $as_sci_List(rest.tail__O())
+                  };
+                  this$36 = h
+                };
+                var this$37 = new $c_sci_$colon$colon(x$6, this$36);
+                upperCased = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$37, "", "", "");
+                break matchEnd9
+              };
+              throw new $c_s_MatchError(x1$3)
+            }
           } else {
             upperCased = name
           };
@@ -7268,25 +7231,25 @@ $c_Lsimer_html_converter_HtmlToTagsConverter$.prototype.toScalaAttributes__Lorg_
           var elems$3 = new $c_sjsr_WrappedVarArgs(array$3);
           attrs = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$3)
         };
-        var f$2 = ((this$3$1, nestingLevel$2) => ((x$2) => {
-          var x$1 = $as_T(x$2);
-          return (("" + $p_Lsimer_html_converter_HtmlToTagsConverter$__pad__I__T($m_Lsimer_html_converter_HtmlToTagsConverter$(), nestingLevel$2)) + x$1)
+        var f$2 = ((this$3$1, nestingLevel$2) => ((x$7$2) => {
+          var x$7 = $as_T(x$7$2);
+          return (("" + $p_Lsimer_html_converter_HtmlToTagsConverter$__pad__I__T($m_Lsimer_html_converter_HtmlToTagsConverter$(), nestingLevel$2)) + x$7)
         }))(this$6, nestingLevel$1);
         if ((attrs === $m_sci_Nil$())) {
           return $m_sci_Nil$()
         } else {
-          var arg1$16 = attrs.head__O();
-          var h = new $c_sci_$colon$colon(f$2(arg1$16), $m_sci_Nil$());
-          var t$2 = h;
-          var rest = $as_sci_List(attrs.tail__O());
-          while ((rest !== $m_sci_Nil$())) {
-            var arg1$17 = rest.head__O();
-            var nx = new $c_sci_$colon$colon(f$2(arg1$17), $m_sci_Nil$());
-            t$2.sci_$colon$colon__f_next = nx;
-            t$2 = nx;
-            rest = $as_sci_List(rest.tail__O())
+          var arg1$10 = attrs.head__O();
+          var h$1 = new $c_sci_$colon$colon(f$2(arg1$10), $m_sci_Nil$());
+          var t$2 = h$1;
+          var rest$1 = $as_sci_List(attrs.tail__O());
+          while ((rest$1 !== $m_sci_Nil$())) {
+            var arg1$11 = rest$1.head__O();
+            var nx$1 = new $c_sci_$colon$colon(f$2(arg1$11), $m_sci_Nil$());
+            t$2.sci_$colon$colon__f_next = nx$1;
+            t$2 = nx$1;
+            rest$1 = $as_sci_List(rest$1.tail__O())
           };
-          return h
+          return h$1
         }
       } else {
         throw new $c_s_MatchError(x0$1)
