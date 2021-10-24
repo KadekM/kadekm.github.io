@@ -232,6 +232,13 @@ function $dp_length__I(instance) {
     return instance.length__I()
   }
 }
+function $dp_replaceAll__T__T__T(instance, x0, x1) {
+  if (((typeof instance) === "string")) {
+    return $f_T__replaceAll__T__T__T(instance, x0, x1)
+  } else {
+    return instance.replaceAll__T__T__T(x0, x1)
+  }
+}
 function $dp_replaceFirst__T__T__T(instance, x0, x1) {
   if (((typeof instance) === "string")) {
     return $f_T__replaceFirst__T__T__T(instance, x0, x1)
@@ -6888,7 +6895,7 @@ function $s_Lsimer_html_converter_HtmlToTagsConverter__main__AT__V(args) {
   $m_Lsimer_html_converter_HtmlToTagsConverter$().main__AT__V(args)
 }
 function $p_Lsimer_html_converter_HtmlToTagsConverter$__toScalaTag__Lorg_scalajs_dom_raw_Node__Lsimer_html_converter_ConverterType__sci_Seq__T__I__T($thiz, node, converterType, childrenWithoutGarbageNodes, children, nestingLevel) {
-  var scalaAttrList = $thiz.toScalaAttributes__Lorg_scalajs_dom_raw_NamedNodeMap__Lsimer_html_converter_ConverterType__I__sc_Iterable(node.attributes, converterType, ((1 + nestingLevel) | 0));
+  var scalaAttrList = $thiz.toScalaAttributes__Lorg_scalajs_dom_raw_NamedNodeMap__Lsimer_html_converter_ConverterType__Lorg_scalajs_dom_raw_Node__I__sc_Iterable(node.attributes, converterType, node, ((1 + nestingLevel) | 0));
   var $$x1 = converterType.Lsimer_html_converter_LaminarTagsConverter$__f_tagsRenames;
   var this$1 = $as_T(node.nodeName);
   var x1 = $$x1.get__O__s_Option($as_T(this$1.toLowerCase()));
@@ -7034,7 +7041,7 @@ $c_Lsimer_html_converter_HtmlToTagsConverter$.prototype.toScalaTags__Lorg_scalaj
   var children = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$2, "", ",\n", "");
   return $p_Lsimer_html_converter_HtmlToTagsConverter$__toScalaTag__Lorg_scalajs_dom_raw_Node__Lsimer_html_converter_ConverterType__sci_Seq__T__I__T(this, node, converterType, childrenWithoutGarbageNodes, children, nestingLevel)
 });
-$c_Lsimer_html_converter_HtmlToTagsConverter$.prototype.toScalaAttributes__Lorg_scalajs_dom_raw_NamedNodeMap__Lsimer_html_converter_ConverterType__I__sc_Iterable = (function(attributes, converterType, nestingLevel) {
+$c_Lsimer_html_converter_HtmlToTagsConverter$.prototype.toScalaAttributes__Lorg_scalajs_dom_raw_NamedNodeMap__Lsimer_html_converter_ConverterType__Lorg_scalajs_dom_raw_Node__I__sc_Iterable = (function(attributes, converterType, parentNode, nestingLevel) {
   var $$x1;
   if ((attributes === (void 0))) {
     $$x1 = true
@@ -7046,8 +7053,8 @@ $c_Lsimer_html_converter_HtmlToTagsConverter$.prototype.toScalaAttributes__Lorg_
     $m_s_package$();
     return $m_sci_Nil$()
   } else {
-    var this$42 = new $c_Lorg_scalajs_dom_ext_NamedNodeMapMap(attributes);
-    var f$3 = new $c_sjsr_AnonFunction1(((this$6, converterType$1, nestingLevel$1) => ((x0$1$2) => {
+    var this$36 = new $c_Lorg_scalajs_dom_ext_NamedNodeMapMap(attributes);
+    var f$2 = new $c_sjsr_AnonFunction1(((this$6, converterType$1, parentNode$1, nestingLevel$1) => ((x0$1$2) => {
       var x0$1 = $as_T2(x0$1$2);
       if ((x0$1 !== null)) {
         var attrKey = $as_T(x0$1.T2__f__1);
@@ -7169,93 +7176,132 @@ $c_Lsimer_html_converter_HtmlToTagsConverter$.prototype.toScalaAttributes__Lorg_
           attrs = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$2)
         } else {
           var name = (("" + converterType$1.Lsimer_html_converter_LaminarTagsConverter$__f_attributePrefix) + attrKey);
-          var upperCased;
-          if (($uI(name.indexOf("-")) !== (-1))) {
-            var rc8 = false;
-            var x2 = null;
-            var this$33 = $m_s_Predef$().wrapRefArray__AO__scm_ArraySeq$ofRef($f_T__split__T__I__AT(name, "-", 0));
-            $m_sci_List$();
-            var x1$3 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this$33);
-            matchEnd9: {
-              var x$1 = $m_s_package$().s_package$__f_Nil;
-              if (((x$1 === null) ? (x1$3 === null) : x$1.equals__O__Z(x1$3))) {
-                upperCased = "";
-                break matchEnd9
-              };
-              if ((x1$3 instanceof $c_sci_$colon$colon)) {
-                rc8 = true;
-                x2 = $as_sci_$colon$colon(x1$3);
-                var x$3 = $as_T(x2.sci_$colon$colon__f_head);
-                var p3 = x2.sci_$colon$colon__f_next;
-                var x$4 = $m_s_package$().s_package$__f_Nil;
-                if (((x$4 === null) ? (p3 === null) : x$4.equals__O__Z(p3))) {
-                  upperCased = x$3;
-                  break matchEnd9
-                }
-              };
-              if (rc8) {
-                var x$6 = $as_T(x2.sci_$colon$colon__f_head);
-                var xs = x2.sci_$colon$colon__f_next;
-                var f$1 = ((this$2$1) => ((x$5$2$2) => {
-                  var x$5$2 = $as_T(x$5$2$2);
-                  return $m_sc_StringOps$().capitalize$extension__T__T(x$5$2)
-                }))(this$6);
-                var this$36;
-                if ((xs === $m_sci_Nil$())) {
-                  this$36 = $m_sci_Nil$()
-                } else {
-                  var arg1$8 = xs.head__O();
-                  var h = new $c_sci_$colon$colon(f$1(arg1$8), $m_sci_Nil$());
-                  var t$1 = h;
-                  var rest = $as_sci_List(xs.tail__O());
-                  while ((rest !== $m_sci_Nil$())) {
-                    var arg1$9 = rest.head__O();
-                    var nx = new $c_sci_$colon$colon(f$1(arg1$9), $m_sci_Nil$());
-                    t$1.sci_$colon$colon__f_next = nx;
-                    t$1 = nx;
-                    rest = $as_sci_List(rest.tail__O())
-                  };
-                  this$36 = h
-                };
-                var this$37 = new $c_sci_$colon$colon(x$6, this$36);
-                upperCased = $f_sc_IterableOnceOps__mkString__T__T__T__T(this$37, "", "", "");
-                break matchEnd9
-              };
-              throw new $c_s_MatchError(x1$3)
-            }
-          } else {
-            upperCased = name
-          };
+          var upperCased = $m_Lsimer_html_converter_HtmlToTagsConverter$().uppercaseAttr__T__T(name);
+          var prefixed = $m_Lsimer_html_converter_HtmlToTagsConverter$().prefixAttr__T__Lsimer_html_converter_ConverterType__Lorg_scalajs_dom_raw_Node__T(upperCased, converterType$1, parentNode$1);
+          var renamed = converterType$1.wordReplace__T__T(prefixed);
           $m_s_package$();
-          var array$3 = [((upperCased + " := ") + escapedValue)];
+          var array$3 = [((renamed + " := ") + escapedValue)];
           var elems$3 = new $c_sjsr_WrappedVarArgs(array$3);
           attrs = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(elems$3)
         };
-        var f$2 = ((this$3$1, nestingLevel$2) => ((x$7$2) => {
-          var x$7 = $as_T(x$7$2);
-          return (("" + $p_Lsimer_html_converter_HtmlToTagsConverter$__pad__I__T($m_Lsimer_html_converter_HtmlToTagsConverter$(), nestingLevel$2)) + x$7)
+        var f$1 = ((this$2$1, nestingLevel$2) => ((x$2) => {
+          var x$1 = $as_T(x$2);
+          return (("" + $p_Lsimer_html_converter_HtmlToTagsConverter$__pad__I__T($m_Lsimer_html_converter_HtmlToTagsConverter$(), nestingLevel$2)) + x$1)
         }))(this$6, nestingLevel$1);
         if ((attrs === $m_sci_Nil$())) {
           return $m_sci_Nil$()
         } else {
-          var arg1$10 = attrs.head__O();
-          var h$1 = new $c_sci_$colon$colon(f$2(arg1$10), $m_sci_Nil$());
-          var t$2 = h$1;
-          var rest$1 = $as_sci_List(attrs.tail__O());
-          while ((rest$1 !== $m_sci_Nil$())) {
-            var arg1$11 = rest$1.head__O();
-            var nx$1 = new $c_sci_$colon$colon(f$2(arg1$11), $m_sci_Nil$());
-            t$2.sci_$colon$colon__f_next = nx$1;
-            t$2 = nx$1;
-            rest$1 = $as_sci_List(rest$1.tail__O())
+          var arg1$8 = attrs.head__O();
+          var h = new $c_sci_$colon$colon(f$1(arg1$8), $m_sci_Nil$());
+          var t$1 = h;
+          var rest = $as_sci_List(attrs.tail__O());
+          while ((rest !== $m_sci_Nil$())) {
+            var arg1$9 = rest.head__O();
+            var nx = new $c_sci_$colon$colon(f$1(arg1$9), $m_sci_Nil$());
+            t$1.sci_$colon$colon__f_next = nx;
+            t$1 = nx;
+            rest = $as_sci_List(rest.tail__O())
           };
-          return h$1
+          return h
         }
       } else {
         throw new $c_s_MatchError(x0$1)
       }
-    }))(this, converterType, nestingLevel));
-    return $as_sc_Iterable($f_sc_IterableOps__flatMap__F1__O(this$42, f$3))
+    }))(this, converterType, parentNode, nestingLevel));
+    return $as_sc_Iterable($f_sc_IterableOps__flatMap__F1__O(this$36, f$2))
+  }
+});
+$c_Lsimer_html_converter_HtmlToTagsConverter$.prototype.prefixAttr__T__Lsimer_html_converter_ConverterType__Lorg_scalajs_dom_raw_Node__T = (function(name, converterType, parentNode) {
+  var node;
+  _return: {
+    var parent = parentNode;
+    var res = $m_s_None$();
+    while ((parent !== null)) {
+      var arg1 = parent;
+      var $$x1 = converterType.Lsimer_html_converter_LaminarTagsConverter$__f_nodeNamePrefixer;
+      var this$2 = $as_T(arg1.nodeName);
+      if ($$x1.contains__O__Z($as_T(this$2.toLowerCase()))) {
+        res = new $c_s_Some(parent);
+        node = res;
+        break _return
+      };
+      var x = parent;
+      var y = parentNode.parentNode;
+      if ($m_sr_BoxesRunTime$().equals__O__O__Z(x, y)) {
+        node = res;
+        break _return
+      };
+      parent = parentNode.parentNode
+    };
+    node = res
+  };
+  if ((node instanceof $c_s_Some)) {
+    var x2 = $as_s_Some(node);
+    var value = x2.s_Some__f_value;
+    var $$x2 = converterType.Lsimer_html_converter_LaminarTagsConverter$__f_nodeNamePrefixer;
+    var this$3 = $as_T(value.nodeName);
+    var prefix = $as_T($$x2.getOrElse__O__F0__O($as_T(this$3.toLowerCase()), new $c_sjsr_AnonFunction0(((this$2$1) => (() => ""))(this))));
+    return (("" + prefix) + name)
+  } else {
+    var x$3 = $m_s_None$();
+    if ((x$3 === node)) {
+      return name
+    } else {
+      throw new $c_s_MatchError(node)
+    }
+  }
+});
+$c_Lsimer_html_converter_HtmlToTagsConverter$.prototype.uppercaseAttr__T__T = (function(name) {
+  if (($uI(name.indexOf("-")) !== (-1))) {
+    var rc8 = false;
+    var x2 = null;
+    var this$2 = $m_s_Predef$().wrapRefArray__AO__scm_ArraySeq$ofRef($f_T__split__T__I__AT(name, "-", 0));
+    $m_sci_List$();
+    var x1 = $m_sci_Nil$().prependedAll__sc_IterableOnce__sci_List(this$2);
+    var x = $m_s_package$().s_package$__f_Nil;
+    if (((x === null) ? (x1 === null) : x.equals__O__Z(x1))) {
+      return ""
+    };
+    if ((x1 instanceof $c_sci_$colon$colon)) {
+      rc8 = true;
+      x2 = $as_sci_$colon$colon(x1);
+      var x$3 = $as_T(x2.sci_$colon$colon__f_head);
+      var p3 = x2.sci_$colon$colon__f_next;
+      var x$4 = $m_s_package$().s_package$__f_Nil;
+      if (((x$4 === null) ? (p3 === null) : x$4.equals__O__Z(p3))) {
+        return x$3
+      }
+    };
+    if (rc8) {
+      var x$6 = $as_T(x2.sci_$colon$colon__f_head);
+      var xs = x2.sci_$colon$colon__f_next;
+      var f = ((this$4) => ((x$5$2$2) => {
+        var x$5$2 = $as_T(x$5$2$2);
+        return $m_sc_StringOps$().capitalize$extension__T__T(x$5$2)
+      }))(this);
+      var this$6;
+      if ((xs === $m_sci_Nil$())) {
+        this$6 = $m_sci_Nil$()
+      } else {
+        var arg1 = xs.head__O();
+        var h = new $c_sci_$colon$colon(f(arg1), $m_sci_Nil$());
+        var t = h;
+        var rest = $as_sci_List(xs.tail__O());
+        while ((rest !== $m_sci_Nil$())) {
+          var arg1$1 = rest.head__O();
+          var nx = new $c_sci_$colon$colon(f(arg1$1), $m_sci_Nil$());
+          t.sci_$colon$colon__f_next = nx;
+          t = nx;
+          rest = $as_sci_List(rest.tail__O())
+        };
+        this$6 = h
+      };
+      var this$7 = new $c_sci_$colon$colon(x$6, this$6);
+      return $f_sc_IterableOnceOps__mkString__T__T__T__T(this$7, "", "", "")
+    };
+    throw new $c_s_MatchError(x1)
+  } else {
+    return name
   }
 });
 $c_Lsimer_html_converter_HtmlToTagsConverter$.prototype.removeTagsFromScalaCode__T__T__sci_Seq__T = (function(htmlCode, scalaCode, tagsToRemove) {
@@ -8477,6 +8523,15 @@ $c_ju_regex_Matcher.prototype.replaceFirst__T__T = (function(replacement) {
   } else {
     return this.ju_regex_Matcher__f_inputstr
   }
+});
+$c_ju_regex_Matcher.prototype.replaceAll__T__T = (function(replacement) {
+  this.reset__ju_regex_Matcher();
+  var sb = $ct_jl_StringBuffer__(new $c_jl_StringBuffer());
+  while (this.find__Z()) {
+    this.appendReplacement__jl_StringBuffer__T__ju_regex_Matcher(sb, replacement)
+  };
+  this.appendTail__jl_StringBuffer__jl_StringBuffer(sb);
+  return sb.toString__T()
 });
 $c_ju_regex_Matcher.prototype.reset__ju_regex_Matcher = (function() {
   return this.region__I__I__ju_regex_Matcher(0, $dp_length__I(this.ju_regex_Matcher__f_input0))
@@ -13386,6 +13441,11 @@ function $f_T__indexOf__I__I__I($thiz, ch, fromIndex) {
 }
 function $f_T__length__I($thiz) {
   return $uI($thiz.length)
+}
+function $f_T__replaceAll__T__T__T($thiz, regex, replacement) {
+  var this$1 = $m_ju_regex_Pattern$();
+  var this$2 = this$1.compile__T__I__ju_regex_Pattern(regex, 0);
+  return new $c_ju_regex_Matcher(this$2, $thiz, 0, $uI($thiz.length)).replaceAll__T__T(replacement)
 }
 function $f_T__replaceFirst__T__T__T($thiz, regex, replacement) {
   var this$1 = $m_ju_regex_Pattern$();
@@ -18607,6 +18667,8 @@ function $c_Lsimer_html_converter_LaminarTagsConverter$() {
   this.Lsimer_html_converter_LaminarTagsConverter$__f_newLineAttributes = false;
   this.Lsimer_html_converter_LaminarTagsConverter$__f_attrRenames = null;
   this.Lsimer_html_converter_LaminarTagsConverter$__f_tagsRenames = null;
+  this.Lsimer_html_converter_LaminarTagsConverter$__f_nodeNamePrefixer = null;
+  this.Lsimer_html_converter_LaminarTagsConverter$__f_wordReplace = null;
   $n_Lsimer_html_converter_LaminarTagsConverter$ = this;
   this.Lsimer_html_converter_LaminarTagsConverter$__f_attributePrefix = "";
   this.Lsimer_html_converter_LaminarTagsConverter$__f_nodePrefix = "";
@@ -18618,7 +18680,15 @@ function $c_Lsimer_html_converter_LaminarTagsConverter$() {
   var this$20 = $m_s_Predef$().s_Predef$__f_Map;
   var array$1 = [new $c_T2("datalist", "dataList")];
   var elems$1 = new $c_sjsr_WrappedVarArgs(array$1);
-  this.Lsimer_html_converter_LaminarTagsConverter$__f_tagsRenames = this$20.from__sc_IterableOnce__sci_Map(elems$1)
+  this.Lsimer_html_converter_LaminarTagsConverter$__f_tagsRenames = this$20.from__sc_IterableOnce__sci_Map(elems$1);
+  var this$28 = $m_s_Predef$().s_Predef$__f_Map;
+  var array$2 = [new $c_T2("svg", "svg."), new $c_T2("path", "svg.")];
+  var elems$2 = new $c_sjsr_WrappedVarArgs(array$2);
+  this.Lsimer_html_converter_LaminarTagsConverter$__f_nodeNamePrefixer = this$28.from__sc_IterableOnce__sci_Map(elems$2);
+  var this$36 = $m_s_Predef$().s_Predef$__f_Map;
+  var array$3 = [new $c_T2("strokelinecap", "strokeLineCap"), new $c_T2("strokelinejoin", "strokeLineJoin")];
+  var elems$3 = new $c_sjsr_WrappedVarArgs(array$3);
+  this.Lsimer_html_converter_LaminarTagsConverter$__f_wordReplace = this$36.from__sc_IterableOnce__sci_Map(elems$3)
 }
 $c_Lsimer_html_converter_LaminarTagsConverter$.prototype = new $h_O();
 $c_Lsimer_html_converter_LaminarTagsConverter$.prototype.constructor = $c_Lsimer_html_converter_LaminarTagsConverter$;
@@ -18627,6 +18697,30 @@ function $h_Lsimer_html_converter_LaminarTagsConverter$() {
   /*<skip>*/
 }
 $h_Lsimer_html_converter_LaminarTagsConverter$.prototype = $c_Lsimer_html_converter_LaminarTagsConverter$.prototype;
+$c_Lsimer_html_converter_LaminarTagsConverter$.prototype.wordReplace__T__T = (function(s) {
+  var this$1 = this.Lsimer_html_converter_LaminarTagsConverter$__f_wordReplace;
+  var result = s;
+  var it = this$1.iterator__sc_Iterator();
+  while (it.hasNext__Z()) {
+    var arg1 = result;
+    var arg2 = it.next__O();
+    var x0$1 = $as_T(arg1);
+    var x1$1 = $as_T2(arg2);
+    var x1 = new $c_T2(x0$1, x1$1);
+    matchEnd4: {
+      var acc = $as_T(x1.T2__f__1);
+      var p2 = $as_T2(x1.T2__f__2);
+      if ((p2 !== null)) {
+        var from = $as_T(p2.T2__f__1);
+        var to = $as_T(p2.T2__f__2);
+        result = $f_T__replaceAll__T__T__T(acc, ("(?i)" + from), to);
+        break matchEnd4
+      };
+      throw new $c_s_MatchError(x1)
+    }
+  };
+  return $as_T(result)
+});
 $c_Lsimer_html_converter_LaminarTagsConverter$.prototype.productPrefix__T = (function() {
   return "LaminarTagsConverter"
 });
